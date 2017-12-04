@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>this</title>
+</head>
+<body>
+	<script>
+	var metaEle = document.querySelectorAll('meta')
+	console.log('metaEle: ', metaEle)
+		var fn = function () {
+			console.log(this)
+		}
+		var obj = {
+			name: 'obj...',
+			fn: fn,
+		}
+		var faker = {
+			name: 'faker...',
+		}
+		obj.fn.apply(faker)
+	</script>
+</body>
+</html>

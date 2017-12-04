@@ -10,7 +10,15 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/mdm2': {
+        target: 'http://sit.behuntergatherer.com',
+        changeOrigin:true,
+        pathRewrite:{
+          '^/mdm2':'/mdm2'
+        }
+      }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Promise</title>
+</head>
+<body>
+	<script>
+		
+		var thenCache = []
+		function TestPromise (fn) {
+			console.log('TestPromise: ', this)
+			window.setTimeout(() => {
+				fn.call(this, this.resovel.bind(this))
+			}, 0)
+		}
+
+		TestPromise.prototype.resovel = function (value) {
+			console.log('resovel: ', this)
+			this.value = value
+			this.triggerThen()
+		} 
+
+		TestPromise.prototype.then = function (onResolve, onReject) {
+			thenCache.push({onResolve: onResolve, onReject: onReject})
+		}
+
+		TestPromise.prototype.triggerThen = function () {
+			console.log('triggerThen: ', this)
+			var current = thenCache.shift(),
+				res
+			if (!current) return
+			
+			res = current.onResolve	
+			if (typeof res === 'function') {
+				this.value = res.call(null, this.value)
+			}
+		}
+
+		var testPromise = new TestPromise(function (resovel) {
+			resovel('msg!!')
+		})
+		.then(function(data){console.log(data)})
+
+		console.log('testPromise ', testPromise)
+
+		
+
+	</script>
+</body>
+</html>
