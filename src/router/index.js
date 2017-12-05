@@ -3,7 +3,8 @@ const serverDir = process.env.SERVER_DIR
 
 const config = [
 	{ path: '/helloWorld', name: 'helloWorld' },
-	{ path: '/login', name: 'login' }
+	{ path: '/login', name: 'login' },
+	{ path: '/goods', name: 'goods' },
 ]
 
 const routes = [
