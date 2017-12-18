@@ -5,6 +5,7 @@ const config = [
 	{ path: '/helloWorld', name: 'helloWorld' },
 	{ path: '/login', name: 'login' },
 	{ path: '/goods', name: 'goods' },
+	{ path: '/modal', name: 'modal' },
 ]
 
 const routes = [
