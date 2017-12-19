@@ -17,13 +17,16 @@ const routes = [
 	},
 ]
 
+// 路由解析（包括多层路由）
 function parseRouter (items) {
 	return items.map((item) => {
 		const result = {
 			path: item.path,
 			name: item.name,
 			component: resolve => require([`../pages${item.path}/index.vue`], resolve),
+			children: item.children,
 		}
+		if (result.children) result.children = parseRouter(result.children)
 		return result
 	})
 }
