@@ -1,6 +1,7 @@
 <template>
   <div class="login__content">
 		<h3>login page ...</h3>
+		<h4>test ...</h4>
 		<!-- <img :src="skinImg" alt=""> -->
 		<Input v-model="phone" placeholder="phone..." style="width: 350px"></Input>
 		<p></p>
@@ -54,10 +55,13 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+	@import 'src/stylus/test'
 	div
 		font-size 28px
-		color skyblue
+		color $color-main
 		img
 			width 100%
 			height auto
+		h4
+			color $test
 </style>
