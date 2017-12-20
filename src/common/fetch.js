@@ -26,10 +26,9 @@ export const common = (type, url, data, options = {}) => {
 		}
 	})
 }
-
 const install = function (Vue) {
 	Vue.prototype.$get = get
-	Vue.prototype.$post = post	
+	Vue.prototype.$post = post
 }
 
 export default install

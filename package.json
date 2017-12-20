@@ -88,5 +88,13 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "standard": {
+    "global": [
+      "i18n",
+      "window",
+      "WeixinJSBridge",
+      "WebSocket"
+    ]
+  }
 }

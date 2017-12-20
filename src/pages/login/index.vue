@@ -49,9 +49,8 @@ export default {
 				console.log('res: ', res)
 			})
 		},
-	}
+	},
 }
-
 </script>
 
 <style lang="stylus" scoped>
