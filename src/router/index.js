@@ -33,6 +33,6 @@ function parseRouter (items) {
 
 export default new Router({
 	mode: 'history',
-	base: process.env.NODE_ENV === 'development' ? '' : `${serverDir}/`,
+	base: `${serverDir}/`,
 	routes,
 })
